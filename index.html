@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encode</title>
+    <style>
+        .container{
+            text-align: center;
+            font-family: tahoma;
+        }
+        input[type="text"]{
+            padding: 6pt 12pt;
+            font-size: large;
+            outline: none;
+            border-radius: 20pt;
+            border: 1pt solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/" method="POST" onsubmit="return validate()">
+            <input 
+                type="text"
+                name="message" 
+                id="first" spellcheck="false"
+                autofocus
+                autocomplete="off"
+            />
+            <br><br>
+            <input type="radio" name="option" id="encode" value="encode" checked>Encode
+            <input type="radio" name="option" id="decode" value="decode">Decode
+        </form>
+        <center>
+            <div id="message"></div>
+        </center>
+        <script>
+            function validate(){
+                var text = document.getElementById("first");
+                if(text.value == ""){
+                    alert("Err: Empty message")
+                    return false
+                }else{return true}
+            }
+        </script>
+    </div>
+</body>
+</html>
